@@ -1,0 +1,44 @@
+/* Variables */
+root {
+    /* tipografías */
+    --fuenteHeadings: 'Open Sans', sans-serif;
+    --fuenteParrafos: 'PT Sans', sans-serif;
+    /* colores */
+}
+
+/* Globales */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    background-image: url(../img/fondo.jpeg);
+    background-repeat: no repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.contenedor {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Body CSS */
+
+.ahorcado {
+    border: 2px solid red;
+    width: 120rem;
+    height: 80rem;
+}
