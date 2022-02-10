@@ -1,9 +1,21 @@
 /* Variables */
-root {
+:root {
     /* tipografías */
     --fuenteHeadings: 'Open Sans', sans-serif;
     --fuenteParrafos: 'PT Sans', sans-serif;
     /* colores */
+    --primario: #68bd10;
+    --secundario: #ffffff;
+    --complementario_1: #000000;
+    --complementario_2: #bd1010;
+    --complementario_3: #bd5810;
+    --complementario_4: #0d358f;
+    --capa: rgba(255, 255, 255, 0.1);
+    /* colores botones */
+    --color_1: #13948b;
+    --color_2: #321cfc;
+    --color_3: #0cffe0;
+    --color_4: #ff9a2b;
 }
 
 /* Globales */
@@ -22,7 +34,7 @@ html {
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 1.6rem;
-    background-image: url(../img/fondo.jpeg);
+    background-image: url(../img/fondo_global.jpg);
     background-repeat: no repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -35,10 +47,187 @@ body {
     margin: 0 auto;
 }
 
+.canvas {
+    position: absolute;
+    z-index: 0;
+    left: 75px;
+}
+
 /* Body CSS */
 
+.iniciojuego {
+    /*  border: 2px solid var(--primario); */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+
+.jugar,
+.iniciar,
+.agregarpalabra,
+.comprobar {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.6rem 0.3rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3;
+    transition-property: box-shadow;
+}
+
+.jugar,
+.iniciar {
+    color: var(--secundario);
+    box-shadow: 0 0 2rem var(--color_1);
+    background: var(--complementario_1);
+}
+
+.jugar:hover,
+.iniciar:hover {
+    color: var(--secundario);
+    background: var(--color_1);
+    box-shadow: 0 0 0.5rem var(--color_1), 0 0 2.5rem var(--color_1),
+        0 0 0.5rem var(--color_1), 0 0 10rem var(--color_1);
+}
+
+.comprobar {
+    color: var(--secundario);
+    box-shadow: 0 0 2rem var(--color_2);
+    background: var(--complementario_1);
+}
+
+.comprobar:hover {
+    color: var(--secundario);
+    background: var(--color_2);
+    box-shadow: 0 0 0.5rem var(--color_2), 0 0 2.5rem var(--color_2),
+        0 0 0.5rem var(--color_2), 0 0 10rem var(--color_2);
+}
+
+.letra {
+    background-color: var(--color_2);
+}
+
+.agregarpalabra {
+    color: var(--secundario);
+    box-shadow: 0 0 2rem var(--color_4);
+    background: var(--complementario_1);
+}
+
+.agregarpalabra:hover {
+    color: var(--secundario);
+    background: var(--color_4);
+    box-shadow: 0 0 0.5rem var(--color_4), 0 0 2.5rem var(--color_4),
+        0 0 0.5rem var(--color_4), 0 0 10rem var(--color_4);
+}
+
+.nuevapalabra {
+    background-color: var(--color_4);
+}
+
+.cajaLetra {
+    margin-top: 2rem;
+}
+
+.titulo {
+    text-transform: uppercase;
+    color: var(--primario);
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+/* .seccionpalabras {
+    border: 2px solid var(--complementario_2);
+} */
+
 .ahorcado {
-    border: 2px solid red;
+    background: var(--capa);
     width: 120rem;
     height: 80rem;
+}
+
+.palabra {
+    color: var(--primario);
+    letter-spacing: 2rem;
+    position: absolute;
+    z-index: 1;
+    top: 30rem;
+    left: 30rem;
+    right: 30rem;
+}
+
+.letrausada {
+    color: var(--primario);
+    letter-spacing: 1.2rem;
+    position: absolute;
+    text-transform: uppercase;
+    z-index: 1;
+    top: 30rem;
+    left: 90rem;
+    right: 5rem;
+}
+
+.vida {
+    color: var(--primario);
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: absolute;
+    z-index: 1;
+    left: 30rem;
+    right: 30rem;
+    top: 28rem;
+}
+
+.footer > h2 {
+    color: var(--primario);
+    margin: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.reglas {
+    color: var(--primario);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    font-weight: 700;
+}
+
+.victoria {
+    color: var(--secundario);
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 25rem;
+    text-shadow: 0 0 5px var(--complementario_3),
+        0 0 10px var(--complementario_3), 0 0 20px var(--complementario_3),
+        0 0 40px var(--complementario_3), 0 0 80px var(--complementario_3),
+        0 0 90px var(--complementario_3), 0 0 100px var(--complementario_3),
+        0 0 140px var(--complementario_3), 0 0 180px var(--complementario_3);
+    position: absolute;
+    z-index: 1;
+    top: 30rem;
+    bottom: 40rem;
+    left: 10rem;
+    right: 10rem;
+}
+
+.derrota {
+    color: var(--secundario);
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 25rem;
+    text-shadow: 0 0 5px var(--complementario_2),
+        0 0 10px var(--complementario_2), 0 0 20px var(--complementario_2),
+        0 0 40px var(--complementario_2), 0 0 80px var(--complementario_2),
+        0 0 90px var(--complementario_2), 0 0 100px var(--complementario_2),
+        0 0 140px var(--complementario_2), 0 0 180px var(--complementario_2);
+    position: absolute;
+    z-index: 1;
+    top: 30rem;
+    bottom: 40rem;
+    left: 10rem;
+    right: 10rem;
 }
